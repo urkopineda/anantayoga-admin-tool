@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: urko
+  Date: 13/04/16
+  Time: 19:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE HTML>
 <html xmlns:jsp="http://java.sun.com/JSP/Page">
     <meta charset="utf-8" />
@@ -12,10 +20,10 @@
 						<p>Aplicación de administración del Centro.</p>
 					</header>
 					<div id="login">
-                        <form method="post" id="login-form" action="<%=request.getContextPath()%>/Login">
+                        <form method="post" id="login-form" action="<%=request.getContextPath()%>/login">
 							<p>
 								Usuario
-								<input type="text" placeholder="Usuario" id="username" ></input>
+								<input type="text" placeholder="Usuario" id="username" name="username" ></input>
 							</p>
 							<p>
 								Contraseña

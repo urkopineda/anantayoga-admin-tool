@@ -7,7 +7,7 @@
       <root url="jar:///opt/apache-tomcat/lib/catalina-storeconfig.jar!/" />
       <root url="jar:///opt/apache-tomcat/lib/catalina-tribes.jar!/" />
       <root url="jar:///opt/apache-tomcat/lib/catalina.jar!/" />
-      <root url="jar:///opt/apache-tomcat/lib/ecj-4.4.2.jar!/" />
+      <root url="jar:///opt/apache-tomcat/lib/ecj-4.5.jar!/" />
       <root url="jar:///opt/apache-tomcat/lib/el-api.jar!/" />
       <root url="jar:///opt/apache-tomcat/lib/jasper-el.jar!/" />
       <root url="jar:///opt/apache-tomcat/lib/jasper.jar!/" />

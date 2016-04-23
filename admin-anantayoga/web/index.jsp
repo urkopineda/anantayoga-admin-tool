@@ -1,5 +1,4 @@
 <%@ page import="data.User" %>
-
 <%--
   Created by IntelliJ IDEA.
   User: urko
@@ -9,13 +8,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-
     User user;
     HttpSession s = request.getSession(false);
     if (s != null) {
         user = (User) s.getAttribute("user");
-    } else response.sendRedirect("login.jsp");
-
+        if (user == null) response.sendRedirect("login.jsp");
+    }
 %>
 <!DOCTYPE HTML>
 <html>

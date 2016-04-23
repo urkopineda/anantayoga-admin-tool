@@ -3,10 +3,16 @@ package db;
 /**
  * Created by urko on 18/04/16.
  */
-public class DBUtils {
+public class Utils {
 
-    public DBUtils() {
+    private DB database;
 
+    public Utils() {
+        database = new DB();
+    }
+
+    public DB getDB() {
+        return database;
     }
 
     public boolean checkUser(String username, String password) {
