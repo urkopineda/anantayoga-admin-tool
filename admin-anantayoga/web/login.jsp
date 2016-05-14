@@ -8,7 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE HTML>
 <html xmlns:jsp="http://java.sun.com/JSP/Page">
-    <meta charset="utf-8" />
+    <head>
+        <meta charset="utf-8" />
+        <title>Login | Ananta Yoga</title>
+    </head>
 	<jsp:include page="./resources/head.jsp"/>
 	<body>
 		<div id="wrapper">

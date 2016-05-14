@@ -16,9 +16,46 @@
     }
 %>
 <!DOCTYPE HTML>
-<html>
-<head></head>
-<body>
-    <p>Hi!</p>
-</body>
+<html xmlns:jsp="http://java.sun.com/JSP/Page">
+    <head>
+        <meta charset="utf-8" />
+        <title>Inicio | Ananta Yoga</title>
+    </head>
+    <jsp:include page="./resources/head.jsp"/>
+    <body>
+    <div id="wrapper">
+        <jsp:include page="./resources/header.jsp"/>
+        <div>
+            <div class="inner">
+                <header>
+                    <h1>Inicio</h1>
+                    <p>Página de inicio.</p>
+                </header>
+                <h2>Personas</h2>
+                <div id="main">
+                    <table>
+                        <thead>
+                            <td>#</td>
+                            <td>Nombre</td>
+                            <td>Apellidos</td>
+                            <td>Pagado</td>
+                            <td></td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Urko</td>
+                                <td>Pineda Olmo</td>
+                                <td>No</td>
+                                <td><button onclick="location.href='./ficha.jsp';">Ver ficha</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <jsp:include page="./resources/footer.jsp"/>
+    </div>
+    <jsp:include page="./resources/includes.jsp"/>
+    </body>
 </html>

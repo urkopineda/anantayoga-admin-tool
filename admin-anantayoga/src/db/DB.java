@@ -21,14 +21,14 @@ public class DB {
     private void loadDriver() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        } catch (ClassNotFoundException e) {}
     }
 
     private void connect() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/" + Definitions.dbName, Definitions.dbUsername, Definitions.dbPassword);
+            if (conn != null) {
+                if (conn.isClosed()) conn = DriverManager.getConnection("jdbc:mysql://localhost/" + Definitions.dbName, Definitions.dbUsername, Definitions.dbPassword);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

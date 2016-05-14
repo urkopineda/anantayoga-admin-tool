@@ -19,7 +19,7 @@
 <html xmlns:jsp="http://java.sun.com/JSP/Page">
     <head>
         <meta charset="utf-8" />
-        <title>Inicio | Ananta Yoga</title>
+        <title>Ficha de usuario | Ananta Yoga</title>
     </head>
     <jsp:include page="./resources/head.jsp"/>
     <body>
@@ -28,29 +28,11 @@
         <div>
             <div class="inner">
                 <header>
-                    <h1>Inicio</h1>
-                    <p>Página de inicio.</p>
+                    <h1>NOMBRE APELLIDOS</h1>
+                    <p>Ficha de usuario.</p>
                 </header>
-                <h2>Personas</h2>
                 <div id="main">
-                    <table>
-                        <thead>
-                            <td>#</td>
-                            <td>Nombre</td>
-                            <td>Apellidos</td>
-                            <td>Pagado</td>
-                            <td></td>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>Urko</td>
-                                <td>Pineda Olmo</td>
-                                <td>No</td>
-                                <td><button onclick="location.href='./ficha.jsp';">Ver ficha</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
