@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="anantayoga-webapp" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-lang3-3.4" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.41-bin" />
+        </element>
       </element>
     </root>
   </artifact>

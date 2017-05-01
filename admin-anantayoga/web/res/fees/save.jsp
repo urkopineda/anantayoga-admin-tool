@@ -13,10 +13,14 @@
         db.insertFee(f);
         %>
         <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>¡Bien!</strong> La cuota / bono se ha guardado correctamente.
-            <a onclick="refreshFees()" href="#">Refrescar</a>
         </div>
+        <script>
+            window.setTimeout(function() {
+                $(".alert").alert('close');
+                refreshFees();
+            }, 2000);
+        </script>
         <%
         db.disconnect();
     } catch (SQLException e) {

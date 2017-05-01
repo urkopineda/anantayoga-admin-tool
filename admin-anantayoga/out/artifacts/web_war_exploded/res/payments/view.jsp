@@ -37,6 +37,9 @@
                 <button type="button" class="btn btn-warning" onclick="window.open('./bill.jsp?id=<%= p.getId() %>')">
                     Ver factura
                 </button>
+                <button id="delete-payment-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePaymentModal" data-payment_id="<%= p.getId() %>">
+                    Borrar pago
+                </button>
             </td>
         </tr>
         <%

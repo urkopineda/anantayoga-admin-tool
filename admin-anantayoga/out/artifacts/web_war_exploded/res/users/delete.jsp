@@ -7,10 +7,14 @@
         db.deleteUser(Integer.parseInt(request.getParameter("id")));
         %>
         <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>¡Bien!</strong> Usuario dado de baja correctamente.
-            <a onclick="refreshUsers()" href="#">Refrescar</a>
+            <strong>¡Bien!</strong> Usuario eliminado correctamente.
         </div>
+        <script>
+            window.setTimeout(function() {
+                $(".alert").alert('close');
+                refreshUsers();
+            }, 2000);
+        </script>
         <%
         db.disconnect();
     } catch (SQLException e) {

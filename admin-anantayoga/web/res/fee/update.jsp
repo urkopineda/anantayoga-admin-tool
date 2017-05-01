@@ -13,9 +13,13 @@
         db.updateFee(f);
         %>
         <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>¡Bien!</strong> La cuota / bono se ha actualizado correctamente.
         </div>
+        <script>
+            window.setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+        </script>
         <%
         db.disconnect();
     } catch (SQLException e) {

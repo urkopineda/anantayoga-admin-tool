@@ -15,8 +15,12 @@
         <h1><%= u.getName() %> <small><%= u.getSurname() %></small></h1>
     </div>
     <div class="row" style="margin-bottom: 20px;">
-        <div class="col-sm-2"><img class="img-thumbnail" src="./res/images/prueba.jpg" style="width: 100%;"></div>
-        <div class="col-sm-10">
+        <!--
+        <div class="col-sm-2">
+            <img class="img-thumbnail" src="./res/images/prueba.jpg" style="width: 100%;">
+        </div>
+        -->
+        <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Información de contacto</div>
                 <table class="table">

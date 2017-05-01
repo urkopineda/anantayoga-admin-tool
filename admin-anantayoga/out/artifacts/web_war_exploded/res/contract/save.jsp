@@ -11,10 +11,15 @@
         db.createContract(c);
         %>
         <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>¡Bien!</strong> El contrato se ha guardado correctamente.
-            <a onclick="refreshContracts();refreshPendingPayments();" href="#">Refrescar</a>
         </div>
+        <script>
+            window.setTimeout(function() {
+                $(".alert").alert('close');
+                refreshContracts();
+                refreshPendingPayments();
+            }, 2000);
+        </script>
         <%
          db.disconnect();
     } catch (SQLException e) {

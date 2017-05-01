@@ -21,8 +21,11 @@
                 <button type="button" class="btn btn-info" onclick="window.location.href='./user.jsp?id=<%= u.getId() %>'">
                     Ver / Editar
                 </button>
-                <button id="delete-user-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-user_id="<%= u.getId() %>">
+                <button id="down-user-button" type="button" class="btn btn-warning" data-toggle="modal" data-target="#downModal" data-user_id="<%= u.getId() %>">
                     Dar de baja
+                </button>
+                <button id="delete-user-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-user_id="<%= u.getId() %>">
+                    Borrar
                 </button>
             </td>
         </tr>

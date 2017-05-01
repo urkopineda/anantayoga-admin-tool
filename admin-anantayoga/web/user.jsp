@@ -71,6 +71,13 @@
                                                                               endDate: $('#add-payment-ed').val(),
                                                                               price: $('#payment-amount').val()});
             }
+            function deletePayment() {
+                $('#alert-pending-payments').load('./res/payments/delete.jsp', {id: $('#delete-payment-id').val()});
+            }
+            $(document).on('click', '#delete-payment-button', function () {
+                var v_id = $(this).data('payment_id');
+                $('#delete-payment-id').val(v_id);
+            });
             $(document).on('click', '#end-contract-button', function () {
                 var v_id = $(this).data('contract_id');
                 $('#end-contract-id').val(v_id);
@@ -278,6 +285,24 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <button type="button" class="btn btn-info" data-dismiss="modal" onclick="addPayment()">Pagar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" tabindex="-1" role="dialog" id="deletePaymentModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">¡Cuidado!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Seguro que quieres borrar este pago? Los datos NO se podrán recuperar.</p>
+                            <input type="hidden" id="delete-payment-id" value="-1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No, sacame de aquí</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deletePayment()">Si, entiendo los riesgos</button>
                         </div>
                     </div>
                 </div>

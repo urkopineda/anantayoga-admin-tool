@@ -31,22 +31,30 @@
                 });
                 $('body').on('click', function (e) {
                     $('[data-toggle="popover"]').each(function () {
-                        //the 'is' for buttons that trigger popups
-                        //the 'has' for icons within a button that triggers a popup
                         if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
                             $(this).popover('hide');
                         }
                     });
                 });
+
             });
             function refreshAllPayments() {
-                // TODO: Tener en cuenta las fechas a mostrar.
-                $('#payments-container').load('./res/payments/nview.jsp');
+                $('#payments-container').load('./res/payments/nview.jsp', {sta: $('#datetimepicker-fi').data().date,
+                                                                           end: $('#datetimepicker-ff').data().date});
                 load_search('#search-input', '#payments-container');
             }
+            function deletePayment() {
+                $('#alert-container').load('./res/payments/delete.jsp', {id: $('#delete-payment-id').val()});
+            }
+            $(document).on('click', '#delete-payment-button', function () {
+                var v_id = $(this).data('payment_id');
+                $('#delete-payment-id').val(v_id);
+            });
             function clean() {
                 $('#fi-cal').val("");
                 $('#ff-cal').val("");
+                $('#datetimepicker-fi').data().date = "";
+                $('#datetimepicker-fi').data().date = "";
                 refreshAllPayments();
             }
         </script>
@@ -67,7 +75,7 @@
             <label>Desde...
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker-fi'>
-                        <input id="ff-cal" type='text' class="form-control" onblur="refreshAllPayments()" />
+                        <input id="fi-cal" type='text' class="form-control" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -77,23 +85,28 @@
             <label>Hasta...
                 <div class="form-group">
                     <div class='input-group date' id='datetimepicker-ff'>
-                        <input id="fi-cal" type='text' class="form-control" onblur="refreshAllPayments()"/>
+                        <input id="ff-cal" type='text' class="form-control" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                     </div>
                 </div>
             </label>
-            <button type="button" class="btn btn-danger" onclick="clean()">
+            <button type="button" class="btn btn-danger" onclick="clean();">
                 Limpiar
+            </button>
+            <button type="button" class="btn btn-success" onclick="refreshAllPayments()">
+                Filtrar
             </button>
             <script type="text/javascript">
                 $(function () {
                     $('#datetimepicker-fi').datetimepicker({
-                        locale: 'es'
+                        locale: 'es',
+                        format: 'L'
                     });
                     $('#datetimepicker-ff').datetimepicker({
-                        locale: 'es'
+                        locale: 'es',
+                        format: 'L'
                     });
                 });
             </script>
@@ -115,6 +128,24 @@
                 </thead>
                 <tbody id="payments-container"></tbody>
             </table>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="deletePaymentModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">¡Cuidado!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que quieres borrar este pago? Los datos NO se podrán recuperar.</p>
+                    <input type="hidden" id="delete-payment-id" value="-1">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No, sacame de aquí</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deletePayment()">Si, entiendo los riesgos</button>
+                </div>
+            </div>
         </div>
     </div>
     <button type="button" class="btn btn-info" onclick="window.print()" style="margin-left: 10px;">

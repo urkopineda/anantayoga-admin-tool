@@ -24,7 +24,7 @@
                 <%
                     if (u.getVigente() == 1) {
                 %>
-                <button id="delete-user-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-user_id="<%= u.getId() %>">
+                <button id="delete-user-button" type="button" class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" data-user_id="<%= u.getId() %>">
                     Dar de baja
                 </button>
                 <%
@@ -36,6 +36,9 @@
                 <%
                     }
                 %>
+                <button id="delete-user-button" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-user_id="<%= u.getId() %>">
+                    Borrar
+                </button>
             </td>
         </tr>
     <%

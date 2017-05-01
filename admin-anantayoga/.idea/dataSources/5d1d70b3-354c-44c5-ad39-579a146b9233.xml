@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - anantayoga-db@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="anantayoga-db">
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="admin_usuario">
+      <Comment>Aquí guardaremos todos los datos de los usuarios</Comment>
+    </table>
+    <table id="4" parent="2" name="admin_contrato"/>
+    <table id="5" parent="2" name="admin_cuota"/>
+    <table id="6" parent="2" name="admin_tipo_cuota"/>
+    <table id="7" parent="2" name="admin_pagos"/>
+    <view id="8" parent="2" name="view_users">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="9" parent="2" name="view_contratos_vigentes">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="10" parent="2" name="view_cuota">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="11" parent="2" name="view_payments">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="12" parent="2" name="view_all_cuota">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="13" parent="2" name="view_all_users">
+      <Comment>VIEW</Comment>
+    </view>
+    <routine id="14" parent="2" name="get_pending_payments">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="15" parent="3" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="3" name="NOMBRE">
+      <DataType>varchar(75)|0</DataType>
+    </column>
+    <column id="17" parent="3" name="APELLIDOS">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="18" parent="3" name="DIRECCION">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="19" parent="3" name="POBLACION">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="20" parent="3" name="PROVINCIA">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="21" parent="3" name="TELEFONO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="3" name="EMAIL">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="23" parent="3" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="24" parent="3" name="PRIMARY">
+      <ColNames>ID_ADMIN_USUARIO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="4" name="ID_ADMIN_CONTRATO">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="4" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="27" parent="4" name="ID_ADMIN_CUOTA">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="4" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="29" parent="4" name="FECHA">
+      <DataType>timestamp|0</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="4" name="FECHA_FIN">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="31" parent="4" name="CUOTA_idx">
+      <ColNames>ID_ADMIN_CUOTA</ColNames>
+    </index>
+    <index id="32" parent="4" name="USUARIO_idx">
+      <ColNames>ID_ADMIN_USUARIO</ColNames>
+    </index>
+    <key id="33" parent="4" name="PRIMARY">
+      <ColNames>ID_ADMIN_CONTRATO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="4" name="CUOTA">
+      <ColNames>ID_ADMIN_CUOTA</ColNames>
+      <RefTableName>admin_cuota</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>ID_ADMIN_CUOTA</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="35" parent="4" name="USUARIO">
+      <ColNames>ID_ADMIN_USUARIO</ColNames>
+      <RefTableName>admin_usuario</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>ID_ADMIN_USUARIO</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="36" parent="5" name="ID_ADMIN_CUOTA">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="5" name="ID_ADMIN_TIPO_CUOTA">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="5" name="NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="39" parent="5" name="DESCRIPCION">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="40" parent="5" name="DIAS_DURACION">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="5" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <column id="42" parent="5" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <index id="43" parent="5" name="TIPO_CUOTA_idx">
+      <ColNames>ID_ADMIN_TIPO_CUOTA</ColNames>
+    </index>
+    <key id="44" parent="5" name="PRIMARY">
+      <ColNames>ID_ADMIN_CUOTA</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="45" parent="5" name="TIPO_CUOTA">
+      <ColNames>ID_ADMIN_TIPO_CUOTA</ColNames>
+      <RefTableName>admin_tipo_cuota</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>ID_ADMIN_TIPO_CUOTA</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="46" parent="6" name="ID_ADMIN_TIPO_CUOTA">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="6" name="NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="48" parent="6" name="TIPO_DIAS">
+      <DataType>varchar(45)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="49" parent="6" name="PRIMARY">
+      <ColNames>ID_ADMIN_TIPO_CUOTA</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="7" name="ID_ADMIN_PAGOS">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="7" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="7" name="ID_ADMIN_CONTRATO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="7" name="FECHA_PAGO">
+      <DataType>timestamp|0</DataType>
+      <DefaultExpression>&apos;CURRENT_TIMESTAMP&apos;</DefaultExpression>
+    </column>
+    <column id="54" parent="7" name="FECHA_INICIO">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="55" parent="7" name="FECHA_FIN">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="56" parent="7" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <index id="57" parent="7" name="FK_CONTRATO_idx">
+      <ColNames>ID_ADMIN_CONTRATO</ColNames>
+    </index>
+    <index id="58" parent="7" name="FK_USUARIo_idx">
+      <ColNames>ID_ADMIN_USUARIO</ColNames>
+    </index>
+    <key id="59" parent="7" name="PRIMARY">
+      <ColNames>ID_ADMIN_PAGOS</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="7" name="FK_CONTRATO">
+      <ColNames>ID_ADMIN_CONTRATO</ColNames>
+      <RefTableName>admin_contrato</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>ID_ADMIN_CONTRATO</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="61" parent="7" name="FK_USUARIO">
+      <ColNames>ID_ADMIN_USUARIO</ColNames>
+      <RefTableName>admin_usuario</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>ID_ADMIN_USUARIO</RefColNames>
+      <OnUpdate>restrict</OnUpdate>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="62" parent="8" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="63" parent="8" name="NOMBRE">
+      <DataType>varchar(75)|0</DataType>
+    </column>
+    <column id="64" parent="8" name="APELLIDOS">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="65" parent="8" name="DIRECCION">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="66" parent="8" name="POBLACION">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="67" parent="8" name="PROVINCIA">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="68" parent="8" name="TELEFONO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="8" name="EMAIL">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="70" parent="8" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="71" parent="9" name="ID">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="72" parent="9" name="NOMBRE">
+      <DataType>varchar(75)|0</DataType>
+    </column>
+    <column id="73" parent="9" name="APELLIDOS">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="74" parent="9" name="CONTRATO_ID">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="75" parent="9" name="CUOTA_ID">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="76" parent="9" name="TIPO_CUOTA_ID">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="77" parent="9" name="CUOTA_NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="78" parent="9" name="DIAS">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="79" parent="9" name="FECHA">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="80" parent="9" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <column id="81" parent="10" name="ID_ADMIN_CUOTA">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="82" parent="10" name="NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="83" parent="10" name="TIPO">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="84" parent="10" name="DESCRIPCION">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="85" parent="10" name="DIAS_DURACION">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="86" parent="10" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <column id="87" parent="10" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="88" parent="11" name="ID_ADMIN_PAGOS">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="89" parent="11" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="90" parent="11" name="ID_ADMIN_CONTRATO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="91" parent="11" name="ID_ADMIN_TIPO_CUOTA">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="92" parent="11" name="NOMBRE_U">
+      <DataType>varchar(75)|0</DataType>
+    </column>
+    <column id="93" parent="11" name="APELLIDOS">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="94" parent="11" name="NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="95" parent="11" name="FECHA_PAGO">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="96" parent="11" name="FECHA_INICIO">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="97" parent="11" name="FECHA_FIN">
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="98" parent="11" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <column id="99" parent="12" name="ID_ADMIN_CUOTA">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="100" parent="12" name="NOMBRE">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="101" parent="12" name="TIPO">
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="102" parent="12" name="DESCRIPCION">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="103" parent="12" name="DIAS_DURACION">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="104" parent="12" name="PRECIO">
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <column id="105" parent="12" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="106" parent="13" name="ID_ADMIN_USUARIO">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="107" parent="13" name="NOMBRE">
+      <DataType>varchar(75)|0</DataType>
+    </column>
+    <column id="108" parent="13" name="APELLIDOS">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="109" parent="13" name="DIRECCION">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="110" parent="13" name="POBLACION">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="111" parent="13" name="PROVINCIA">
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="112" parent="13" name="TELEFONO">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="113" parent="13" name="EMAIL">
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="114" parent="13" name="VIGENTE">
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <argument id="115" parent="14" name="id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>

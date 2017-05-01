@@ -14,6 +14,9 @@
                 });
                 load_search('#search-input', '#users-container');
             })
+            function downUser() {
+                $('#alert-container').load('./res/users/down.jsp', {id: $('#down-user-id').val()});
+            }
             function deleteUser() {
                 $('#alert-container').load('./res/users/delete.jsp', {id: $('#delete-user-id').val()});
             }
@@ -47,6 +50,10 @@
             $(document).on('click', '#delete-user-button', function () {
                 var v_id = $(this).data('user_id');
                 $('#delete-user-id').val(v_id);
+            });
+            $(document).on('click', '#down-user-button', function () {
+                var v_id = $(this).data('user_id');
+                $('#down-user-id').val(v_id);
             });
             $(document).on('click', '#up-user-button', function () {
                 var v_id = $(this).data('user_id');
@@ -143,6 +150,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <!--
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -155,6 +163,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -163,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+            <div class="modal fade" tabindex="-1" role="dialog" id="downModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -172,11 +181,11 @@
                         </div>
                         <div class="modal-body">
                             <p>¿Seguro que quieres dar de baja este usuario? Este usuario se ocultará.</p>
-                            <input type="hidden" id="delete-user-id" value="-1">
+                            <input type="hidden" id="down-user-id" value="-1">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">No, sacame de aquí</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteUser()">Si, entiendo los riesgos</button>
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="downUser()">Si, entiendo los riesgos</button>
                         </div>
                     </div>
                 </div>
@@ -195,6 +204,24 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="upUser()">Si</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">¡Cuidado!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Seguro que quieres borrar a este usuario? Los datos NO se podrán recuperar.</p>
+                            <input type="hidden" id="delete-user-id" value="-1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">No, sacame de aquí</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteUser()">Si, entiendo los riesgos</button>
                         </div>
                     </div>
                 </div>

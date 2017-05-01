@@ -7,10 +7,14 @@
         db.deleteFee(Integer.parseInt(request.getParameter("id")));
         %>
         <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>¡Bien!</strong> La cuota se ha dado de baja correctamente.
-            <a onclick="refreshFees()" href="#">Refrescar</a>
         </div>
+        <script>
+            window.setTimeout(function() {
+                $(".alert").alert('close');
+                refreshFees();
+            }, 2000);
+        </script>
         <%
         db.disconnect();
     } catch (SQLException e) {

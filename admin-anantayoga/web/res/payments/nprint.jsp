@@ -39,6 +39,9 @@
                         data-start_date="<%= p.getStartDate() %>" data-end_date="<%= p.getEndDate() %>" data-user_id="<%= p.getIdUser() %>">
                     Anular
                 </button>
+                <button type="button" class="btn btn-info" onclick="window.location.href='./user.jsp?id=<%= p.getIdUser() %>'">
+                    Ir al usuario
+                </button>
             </td>
         </tr>
         <%

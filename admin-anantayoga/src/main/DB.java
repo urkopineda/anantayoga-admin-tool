@@ -168,13 +168,29 @@ public class DB {
         preparedStatement.close();
     }
 
-    public void deleteUser(int id) throws SQLException {
+    public void downUser(int id) throws SQLException {
         String query = "UPDATE ADMIN_USUARIO SET VIGENTE = 0 WHERE ID_ADMIN_USUARIO = ?";
         PreparedStatement preparedStmt = connection.prepareStatement(query);
         preparedStmt.setInt(1, id);
         preparedStmt.execute();
         preparedStmt.close();
         deleteAllContracts(id);
+    }
+
+    public void deleteUser(int id) throws SQLException {
+        String query = "DELETE FROM ADMIN_PAGOS WHERE ID_ADMIN_USUARIO = ?";
+        PreparedStatement preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setInt(1, id);
+        preparedStmt.execute();
+        query = "DELETE FROM ADMIN_CONTRATO WHERE ID_ADMIN_USUARIO = ?";
+        preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setInt(1, id);
+        preparedStmt.execute();
+        query = "DELETE FROM ADMIN_USUARIO WHERE ID_ADMIN_USUARIO = ?";
+        preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setInt(1, id);
+        preparedStmt.execute();
+        preparedStmt.close();
     }
 
     public void deleteAllContracts(int id) throws SQLException {
@@ -337,6 +353,15 @@ public class DB {
                 int i = 0;
                 Date startDate = addDays(c.getDate(), 0);
                 Date endDate = addDays(startDate, c.getDays());
+                Calendar startCal = Calendar.getInstance();
+                startCal.setTime(startDate);
+                Calendar endCal = Calendar.getInstance();
+                endCal.setTime(endDate);
+                if (startCal.get(Calendar.MONTH) != endCal.get(Calendar.MONTH)) {
+                    endCal.set(Calendar.MONTH, endCal.get(Calendar.MONTH) - 1);
+                    endCal.set(Calendar.DAY_OF_MONTH, endCal.getActualMaximum(Calendar.DAY_OF_MONTH));
+                    endDate = endCal.getTime();
+                }
                 do {
                     String query = "SELECT 1 FROM VIEW_PAYMENTS WHERE ID_ADMIN_USUARIO = ? AND ID_ADMIN_CONTRATO = ? AND DATE(FECHA_INICIO) = ? AND DATE(FECHA_FIN) = ?";
                     PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -368,7 +393,9 @@ public class DB {
                         startDate = endDate;
                         endDate = addDays(endDate, c.getDays());
                         if (startDate.after(new Date())) {
-                            exit = true;
+                            if (ps.size() != 0) {
+                                exit = true;
+                            }
                         }
                     }
                     rs.close();
@@ -417,6 +444,14 @@ public class DB {
             ps.addAll(getPendingPayments(u.getId()));
         }
         return ps;
+    }
+
+    public void deletePayment(int id) throws SQLException {
+        String query = "DELETE FROM ADMIN_PAGOS WHERE ID_ADMIN_PAGOS = ?";
+        PreparedStatement preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setInt(1, id);
+        preparedStmt.execute();
+        preparedStmt.close();
     }
 
     public ArrayList<Contract> getAllContracts() throws SQLException, ParseException {
@@ -473,10 +508,27 @@ public class DB {
         return ps;
     }
 
-    public ArrayList<Payments> getAllPayments() throws SQLException {
+    public ArrayList<Payments> getAllPayments(Date startDate, Date endDate) throws SQLException {
         ArrayList<Payments> ps = new ArrayList<>();
-        String query = "SELECT * FROM VIEW_PAYMENTS ORDER BY FECHA_PAGO DESC";
+        String query = null;
+        int i = 1;
+        if (startDate != null && endDate != null) {
+            query = "SELECT * FROM VIEW_PAYMENTS WHERE FECHA_PAGO >= ? AND FECHA_PAGO <= ? ORDER BY FECHA_PAGO DESC";
+            i = 2;
+        } else if (startDate != null) {
+            query = "SELECT * FROM VIEW_PAYMENTS WHERE FECHA_PAGO >= ? ORDER BY FECHA_PAGO DESC";
+        } else if (endDate != null) {
+            query = "SELECT * FROM VIEW_PAYMENTS WHERE FECHA_PAGO <= ? ORDER BY FECHA_PAGO DESC";
+        } else {
+            query = "SELECT * FROM VIEW_PAYMENTS ORDER BY FECHA_PAGO DESC";
+        }
         PreparedStatement preparedStmt = connection.prepareStatement(query);
+        if (startDate != null) {
+            preparedStmt.setDate(1, new java.sql.Date(startDate.getTime()));
+        }
+        if (endDate != null) {
+            preparedStmt.setDate(i, new java.sql.Date(endDate.getTime()));
+        }
         ResultSet rs = preparedStmt.executeQuery();
         while (rs.next()) {
             Payments p = new Payments();
