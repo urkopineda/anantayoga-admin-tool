@@ -1,14 +1,8 @@
 <component name="ArtifactManager">
   <artifact type="war" name="web:war">
     <output-path>$PROJECT_DIR$/out/artifacts/web_war</output-path>
-    <root id="archive" name="web_war.war">
+    <root id="archive" name="ROOT.war">
       <element id="artifact" artifact-name="web:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="file-copy" path="$PROJECT_DIR$/lib/commons-lang3-3.4.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-5.1.41-bin.jar" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>

@@ -3,66 +3,13 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="web:war" />
+      <artifact name="web:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67cac08a-e798-42af-95c5-a47517397518" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/res/payments/delete.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/res/users/down.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39_bin.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/web_war/anantayoga.war" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/main/DB.class" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/classes/main/DB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/anantayoga-webapp/main/DB.class" afterPath="$PROJECT_DIR$/out/production/anantayoga-webapp/main/DB.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/web_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/anantayoga-webapp.iml" afterPath="$PROJECT_DIR$/anantayoga-webapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/payments.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/payments.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/contract/delete.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/contract/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/contract/save.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/contract/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fee/update.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fee/update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/delete.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/save.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/up.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/fees/up.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/nprint.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/nprint.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/nview.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/nview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/save.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/view.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/payments/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/user/print.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/user/print.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/user/update.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/user/update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/delete.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/print.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/print.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/save.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/up.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/up.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/vprint.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/res/users/vprint.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/users.jsp" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/users.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/DB.java" afterPath="$PROJECT_DIR$/src/main/DB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/payments.jsp" afterPath="$PROJECT_DIR$/web/payments.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/contract/delete.jsp" afterPath="$PROJECT_DIR$/web/res/contract/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/contract/save.jsp" afterPath="$PROJECT_DIR$/web/res/contract/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/fee/update.jsp" afterPath="$PROJECT_DIR$/web/res/fee/update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/fees/delete.jsp" afterPath="$PROJECT_DIR$/web/res/fees/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/fees/save.jsp" afterPath="$PROJECT_DIR$/web/res/fees/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/fees/up.jsp" afterPath="$PROJECT_DIR$/web/res/fees/up.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/payments/nprint.jsp" afterPath="$PROJECT_DIR$/web/res/payments/nprint.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/payments/nview.jsp" afterPath="$PROJECT_DIR$/web/res/payments/nview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/payments/save.jsp" afterPath="$PROJECT_DIR$/web/res/payments/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/payments/view.jsp" afterPath="$PROJECT_DIR$/web/res/payments/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/user/print.jsp" afterPath="$PROJECT_DIR$/web/res/user/print.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/user/update.jsp" afterPath="$PROJECT_DIR$/web/res/user/update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/users/delete.jsp" afterPath="$PROJECT_DIR$/web/res/users/delete.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/users/print.jsp" afterPath="$PROJECT_DIR$/web/res/users/print.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/users/save.jsp" afterPath="$PROJECT_DIR$/web/res/users/save.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/users/up.jsp" afterPath="$PROJECT_DIR$/web/res/users/up.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/res/users/vprint.jsp" afterPath="$PROJECT_DIR$/web/res/users/vprint.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.jsp" afterPath="$PROJECT_DIR$/web/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/users.jsp" afterPath="$PROJECT_DIR$/web/users.jsp" />
     </list>
     <ignored path="anantayoga-webapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -163,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/web/res/users/save.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="42" />
+              <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -589,20 +536,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin-anantayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin-anantayoga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -612,7 +545,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.41-bin.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -1176,12 +1109,12 @@
       <workItem from="1492603948762" duration="400000" />
       <workItem from="1492615603426" duration="3095000" />
       <workItem from="1493630989119" duration="48000" />
-      <workItem from="1493631133180" duration="13259000" />
+      <workItem from="1493631133180" duration="14242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124777000" />
+    <option name="totallyTimeSpent" value="125760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1193,7 +1126,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1613,7 +1546,7 @@
     <entry file="file://$PROJECT_DIR$/web/res/users/save.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="42" />
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
